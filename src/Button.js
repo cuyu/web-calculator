@@ -8,8 +8,8 @@ class Button extends Component {
 
     handleClick() {
         console.log(this.props.name);
-        window.DISPLAY_NUMBER += this.props.name;
-        window.SCREEN_OBJ.setState({value: window.DISPLAY_NUMBER})
+        let newValue = window.SCREEN_OBJ.state.value + this.props.name;
+        window.SCREEN_OBJ.setState({value: newValue});
     }
 
     render() {
