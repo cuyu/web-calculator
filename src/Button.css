@@ -1,0 +1,10 @@
+.Button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    width: 40px;
+    color: cadetblue;
+    font-size: 17px;
+    border-radius: 5px;
+}

@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#root {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+    border: #072c13 1px solid;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+
+.row {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-4 {
+    position: relative;
+    float: left;
+    width: 33.33333333%;
+}
