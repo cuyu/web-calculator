@@ -5,17 +5,9 @@ import React, {Component} from 'react';
 import './Screen.css';
 
 class Screen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: '0',
-        };
-        window.SCREEN_OBJ = this;
-    }
-
     render() {
         return (
-            <div className="Screen">{this.state.value}</div>
+            <div className="Screen">{this.props.number}</div>
         );
     }
 }

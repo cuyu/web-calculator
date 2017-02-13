@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import App from './App';
 import './index.css';
-import Button from './Button'
-import Screen from './Screen'
+import MyButtonController from './ButtonController'
+import MyScreenController from './ScreenController'
 
 
 let screen = document.getElementById('top-screen');
-ReactDOM.render(<Screen></Screen>, screen);
+ReactDOM.render(<MyScreenController></MyScreenController>, screen);
 
-let buttons = document.getElementsByClassName('CalButton');
-for (let i = 0; i < buttons.length; ++i) {
+let buttonDoms = document.getElementsByClassName('CalButton');
+for (let i = 0; i < buttonDoms.length; ++i) {
     ReactDOM.render(
-        <Button name={buttons[i].getAttribute('name')}/>,
-        buttons[i]
+        <MyButtonController name={buttonDoms[i].getAttribute('name')}/>,
+        buttonDoms[i]
     );
 }
