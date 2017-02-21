@@ -2,14 +2,15 @@
  * Created by cuyu on 1/20/17.
  */
 import React, {Component} from 'react';
+import {appendActionCreator} from './actions/action-creator'
+import {store} from './Store'
 import './Button.css';
 
 class Button extends Component {
 
     handleClick() {
         console.log(this.props.name);
-        let newValue = window.SCREEN_OBJ.state.value + this.props.name;
-        window.SCREEN_OBJ.setState({value: newValue});
+        store.dispatch(appendActionCreator(this.props.name));
     }
 
     render() {

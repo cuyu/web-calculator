@@ -10,7 +10,11 @@ class Screen extends Component {
         this.state = {
             value: '0',
         };
-        window.SCREEN_OBJ = this;
+        // subscribe the redux store here so that we can pass the component object to the function
+        this.props.store.subscribe(() => {
+            console.log('store has been updated. Latest store state:', this.props.store.getState());
+            this.setState(this.props.store.getState().value);
+        });
     }
 
     render() {
