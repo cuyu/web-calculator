@@ -24,3 +24,15 @@ body {
     float: left;
     width: 33.33333333%;
 }
+
+.col-3 {
+    position: relative;
+    float: left;
+    width: 25%;
+}
+
+.col-6 {
+    position: relative;
+    float: left;
+    width: 50%;
+}

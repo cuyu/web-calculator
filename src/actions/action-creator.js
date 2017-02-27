@@ -14,3 +14,27 @@ export const clearNumber = () => {
         type: 'CLEAR',
     }
 };
+
+export const calculate = () => {
+    return {
+        type: 'EQUAL',
+    }
+};
+
+export const addNumber = () => {
+    return {
+        type: 'ADD',
+    }
+};
+
+export const subNumber = () => {
+    return {
+        type: 'SUB',
+    }
+};
+
+export const multiplyNumber = () => {
+    return {
+        type: 'MULTIPLY',
+    }
+};
