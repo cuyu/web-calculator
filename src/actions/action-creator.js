@@ -8,3 +8,9 @@ export const appendNumber = (value) => {
         value: value
     }
 };
+
+export const clearNumber = () => {
+    return {
+        type: 'CLEAR',
+    }
+};

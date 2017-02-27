@@ -2,7 +2,7 @@
  * Created by cuyu on 2/23/17.
  */
 import {connect} from 'react-redux'
-import {appendNumber} from '../actions/action-creator'
+import {appendNumber,clearNumber} from '../actions/action-creator'
 import Button from '../components/Button'
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -10,7 +10,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onClick: () => {
             console.log('onClick',ownProps.name)
-            dispatch(appendNumber(ownProps.name))
+            switch (ownProps.name) {
+                case 'C':
+                    dispatch(clearNumber());
+                    break;
+                default:
+                    dispatch(appendNumber(ownProps.name));
+                    break;
+            }
         }
     }
 };
