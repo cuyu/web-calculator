@@ -9,6 +9,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     console.log('dispatch:', dispatch)
     return {
         onClick: () => {
+            console.log('onClick',ownProps.name)
             dispatch(appendNumber(ownProps.name))
         }
     }
