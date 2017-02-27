@@ -2,7 +2,17 @@
  * Created by cuyu on 2/23/17.
  */
 import {connect} from 'react-redux'
-import {appendNumber, clearNumber, addNumber, subNumber, calculate, multiplyNumber} from '../actions/action-creator'
+import {
+    appendNumber,
+    clearNumber,
+    addNumber,
+    subNumber,
+    calculate,
+    multiplyNumber,
+    divideNumber,
+    reverseNumber,
+    percentage
+} from '../actions/action-creator'
 import Button from '../components/Button'
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -11,8 +21,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onClick: () => {
             console.log('onClick', ownProps.name)
             switch (ownProps.name) {
-                case 'C':
+                case 'AC':
                     dispatch(clearNumber());
+                    break;
+                case '+/-':
+                    dispatch(reverseNumber());
+                    break;
+                case '%':
+                    dispatch(percentage());
                     break;
                 case '+':
                     dispatch(addNumber());
@@ -22,6 +38,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                     break;
                 case '*':
                     dispatch(multiplyNumber());
+                    break;
+                case '/':
+                    dispatch(divideNumber());
                     break;
                 case '=':
                     dispatch(calculate());

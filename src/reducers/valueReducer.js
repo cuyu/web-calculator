@@ -63,9 +63,40 @@ export default function _show(state = {value: '0', cachedValue: '0', freshValue:
                 freshValue: true
             };
 
+        case 'DIVIDE':
+            return {
+                value: state.value,
+                cachedValue: state.cachedValue,
+                operator: '/',
+                freshValue: true
+            };
+
+        case 'REVERSE':
+            let reversedValue;
+            if (state.value.startsWith('-')) {
+                reversedValue = state.value.substr(1);
+            }
+            else {
+                reversedValue = '-' + state.value;
+            }
+            return {
+                value: reversedValue,
+                cachedValue: state.cachedValue,
+                operator: state.operator,
+                freshValue: state.freshValue
+            };
+
+        case 'PERCENTAGE':
+            return {
+                value: String(Number(state.value) / 100),
+                cachedValue: state.cachedValue,
+                operator: state.operator,
+                freshValue: state.freshValue
+            };
+
         case 'EQUAL':
-            if (state.operator){
-                let calculatedValue = eval(state.cachedValue+state.operator+state.value);
+            if (state.operator) {
+                let calculatedValue = eval(state.cachedValue + state.operator + state.value);
                 return {
                     value: String(calculatedValue).substr(0, _MAX_LENGTH),
                     cachedValue: state.value,

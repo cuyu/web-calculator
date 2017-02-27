@@ -38,3 +38,21 @@ export const multiplyNumber = () => {
         type: 'MULTIPLY',
     }
 };
+
+export const divideNumber = () => {
+    return {
+        type: 'DIVIDE',
+    }
+};
+
+export const reverseNumber = () => {
+    return {
+        type: 'REVERSE',
+    }
+};
+
+export const percentage = () => {
+    return {
+        type: 'PERCENTAGE',
+    }
+};
